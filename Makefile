@@ -1,10 +1,11 @@
 CC=clang++
+BIN=bin
 build:
-	mkdir -p bin
-	$(CC) -c am.cc -o bin/am.o
-	$(CC) -c fm.cc -o bin/fm.o
-	$(CC) -c pm.cc -o bin/pm.o
-	$(CC) -shared -fPIC bin/am.o bin/fm.o bin/pm.o -o bin/modulations.so
+	mkdir -p $(BIN)
+	$(CC) -c am.cc -o $(BIN)/am.o
+	$(CC) -c fm.cc -o $(BIN)/fm.o
+	$(CC) -c pm.cc -o $(BIN)/pm.o
+	$(CC) -shared -fPIC $(BIN)/am.o $(BIN)/fm.o $(BIN)/pm.o -o $(BIN)/modulations.so
 clean:
-	rm bin/*.o bin/*.so -rf
-	rmdir bin --ignore-fail-on-non-empty
+	rm $(BIN)/*.o $(BIN)/*.so -rf
+	rmdir $(BIN) --ignore-fail-on-non-empty

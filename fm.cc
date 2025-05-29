@@ -1,5 +1,4 @@
 #include "fm.hh"
-#include <cmath>
 
 int FM::Encode(const Signal &in, Signal &out, FMOptions opt) {
     size_t size = in.size();

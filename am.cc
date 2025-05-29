@@ -1,5 +1,4 @@
 #include "am.hh"
-#include <cmath>
 
 int AM::Encode(const Signal &in, Signal &out, AMOptions ops) {
     size_t size = in.size();
